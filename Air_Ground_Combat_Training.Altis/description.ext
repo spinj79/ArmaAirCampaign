@@ -1,0 +1,108 @@
+//Bon recruit files
+#include "bon_recruit_units\dialog\common.hpp"
+#include "bon_recruit_units\dialog\recruitment.hpp"
+
+//Fast Travel system
+#include "dialogs\defines.hpp"
+#include "dialogs\FastTravelDialog.hpp"
+
+class RscTitles {
+	#include "dialogs\FastTravelHUD.hpp"
+};
+
+
+//New Respawn Test
+respawnTemplates[] = {"MenuPosition"};
+respawnTemplateWest[] = {"MenuPosition"};
+respawnDelay = 1;
+
+
+
+
+class Params
+{
+	class TimeOfDay {
+		title = "Time of Day";
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+		texts[] = {"0000","0100","0200","0300","0400","0500","0600","0700","0800","0900","1000","1100","1200","1300","1400","1500","1600","1700","1800","1900","2000","2100","2200","2300","Random"};
+		default = 12;
+	};
+
+	class Weather {
+		title = "Weather";
+		values[] = {1,2,3,4,5};
+		default = 1;
+		texts[] = {"Clear", "Stormy", "Cloudy", "Foggy", "Random"};
+	};
+	
+	class PlayerFatigue {
+		title = "Player Fatigue";
+		values[] = {0,1};
+		texts[] = {"Fatigue Disabled","Fatigue Enabled"};
+		default = 0;
+	};
+	
+	class maxView {
+		title = "View Distance";
+		values[] = {2000,3000,4000,5000,6000,7000,8000,10000};
+		texts[] = {"2000","3000","4000","5000","6000","7000","8000","10000"};
+		default = 3000;
+	};
+	
+	class ambCivilians {
+		title = "Ambient Civilians";
+		values[] = {0,1};
+		texts[] = {"Disable","Enabled"};
+		default = 1;
+	};
+	
+	class TimeMultiply {
+		title = "Time Acceleration";
+		values[] = {1,4,6,12,24,48};
+		texts[] = {"1x","4x","6x","12x","24x","48x"};
+		default = 1;
+	};
+	
+};
+
+class CfgFunctions 
+{
+	class COB 
+	{
+		class functions 
+		{
+			class HALO {file = "COB_HALO\functions\fn_halo.sqf"};
+			class paradrop {file = "COB_HALO\functions\fn_paradrop.sqf"};
+		};
+	};
+};
+
+class CfgSounds 
+{
+	sounds[] = {}; 
+	class C130_exit 
+	{
+		sound[] = {"COB_HALO\sounds\C130_exit.wss", 50, 1};
+		titles[] = {};
+	};
+	class flapping 
+	{
+		sound[] = {"COB_HALO\sounds\flapping.ogg", 10, 1};
+		titles[] = {};
+	};
+	class open_chute 
+	{
+		sound[] = {"COB_HALO\sounds\open_chute.ogg", 10, 1};
+		titles[] = {};
+	};
+	class para_pilot 
+	{
+		sound[] = {"COB_HALO\sounds\para_pilot.ogg", 10, 1};
+		titles[] = {};
+	};
+	class close_chute 
+	{
+		sound[] = {"COB_HALO\sounds\close_chute.ogg", 10, 1};
+		titles[] = {};
+	};
+};
